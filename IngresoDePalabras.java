@@ -6,12 +6,14 @@ public class IngresoDePalabras {
     
     private String nombre,palabras;
     private int filas,ye, contador, cantidad, opcion, cantidad2, subeleccion;
-    private boolean repetidor=true;
+    private boolean repetidor=true, rectificador=false;
     private int x;
+  //  private String P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11;
     Scanner Entrada2 = new Scanner(System.in);
     
-    public IngresoDePalabras(String nombre){
+    public IngresoDePalabras(String nombre, int x){
     this.nombre = nombre;                  //Constructor
+    this.x = x;
     }
     
     public void Datos(){
@@ -69,16 +71,19 @@ public class IngresoDePalabras {
               break;
        }
     }
+           
+    /*  public void Almacenador(){
+            if(x<cantidad2){
+            String[] vector = new String [cantidad2];
+            vector[x] = palabras;   
+            }
+            else{
+            ValidacionMatriz();  
+       }
+     }*/
 
-      public void Almacenador(){
-          if(x<cantidad2){
-      String[] vector = new String [cantidad2];
-      vector[x] = palabras;}else{
-      //Jugar enviar = new Jugar(x);   methodo clase Jugar
-      ValidacionMatriz();
-       }    
-     }
- 
+      
+    
      public void Ingreso(){
         System.out.println("Ingrese sus palabras");
         ye=1;
@@ -89,15 +94,22 @@ public class IngresoDePalabras {
         
         if(contador >0){
         ye++;
-      
+        
         if(contador>=5 && contador<=10){
-        x++;
-        Almacenador(); 
+        x++; 
+        rectificador = true; 
+            if(x<cantidad2){
+            String[] vector = new String [cantidad2];
+            vector[x] = palabras;   
+            }
+            else{
+            ValidacionMatriz();  
+       }
+        
       }else{System.out.println("Ingrese una palabra valida");cantidad = cantidad+1;}
       //  if(palabras.equals(palabras)){System.out.println("Ingrese una palabra valida");cantidad = cantidad+1;}
         }      
-    }
-       
+    }     
  }
      
        public void ValidacionMatriz(){
@@ -116,8 +128,25 @@ public class IngresoDePalabras {
           }else{System.out.println("Ingrese una opcion válida"); ValidacionMatriz();}
         }else{System.out.println("Genial"); Menu retorno = new Menu(repetidor); retorno.Eleccion();}
     }
-
     
+       
+    public void Verificador(){
+    if(x == 0){
+    System.out.println("Por favor ingresa primero las palabras");
+    Menu regreso = new Menu(repetidor);
+    regreso.Eleccion();
+    }else{}
+    
+    }
+    
+    public void Tablero(){
+    System.out.println("tengo hambre");
+    }
+    
+    public int getX(){
+    return x;
+    }
+
      public void Modificar(){
      
      }

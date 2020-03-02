@@ -4,7 +4,7 @@ package SopaDeLetras;
 
 public class Jugar {
     
-    private int x,filas,contador, cantidad2;
+   /* private int x,filas,contador, cantidad2;
     private boolean repetidor=true;
     private String[] vector = new String [cantidad2];
     
@@ -31,9 +31,9 @@ public class Jugar {
         if(x>filas || contador>filas){
         System.out.println("Su cantidad de palabras no cabe en el tablero");
         }else{Tablero();}
-    }*/
+    }
     
     public void Tablero(){
     System.out.println(vector[x]);
-    }
+    }*/
 }

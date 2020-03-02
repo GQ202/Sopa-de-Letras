@@ -6,8 +6,10 @@ public class Menu {
     
     private boolean repetidor;
     private String nombre;
-    private int x, filas, contador, cantidad2;
-    private String vector[];
+    private boolean rectificador;
+    private int x;
+    /*private int x, filas, contador, cantidad2;
+    private String vector[];*/
     
    public Menu(boolean repetidor){    // constructor
     this.repetidor = repetidor;
@@ -28,12 +30,13 @@ public class Menu {
         switch(opcion1){
           case 1: 
               repetidor = false;
-              IngresoDePalabras caso = new IngresoDePalabras(nombre);
+              IngresoDePalabras caso = new IngresoDePalabras(nombre, x);
               caso.Datos();
               break;
           case 2: 
           repetidor = false;
-          Jugar caso2 = new Jugar(x,filas, contador, cantidad2, vector);
+          IngresoDePalabras caso2 = new IngresoDePalabras(nombre, x);
+          x=caso2.getX();
           caso2.Verificador();
               break;
           case 3: System.out.println("clase 3");
